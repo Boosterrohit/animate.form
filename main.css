@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: black;
+}
+.container {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container i {
+  position: absolute;
+  border: 2px solid white;
+  transition: 1s;
+
+  inset: 0;
+}
+.container i:nth-child(1) {
+  border-radius: 30% 70% 70% 30% / 37% 30% 70% 63%;
+  animation: animated 6s linear infinite;
+}
+.container i:nth-child(2) {
+  border-radius: 66% 34% 72% 28% / 66% 62% 38% 34%;
+  animation: animated2 6s alternate-reverse infinite;
+}
+
+.container i:nth-child(3) {
+  border-radius: 13% 87% 25% 75% / 64% 59% 41% 36%;
+  animation: animated 16s alternate-reverse infinite;
+}
+.container:hover i {
+  filter: drop-shadow(0 0 20px var(--clr));
+  border: 2px solid var(--clr);
+}
+@keyframes animated {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animated2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+input {
+  color: white;
+}
+.container .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  height: 100%;
+}
+h1 {
+  color: white;
+}
+.container .login .inputBx {
+  width: 100%;
+  position: relative;
+}
+.container .login .inputBx input {
+  width: 100%;
+  padding: 12px 20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  outline: none;
+  position: relative;
+  height: 100%;
+  border: 2px solid white;
+  background-color: transparent;
+}
+.container .login .inputBx input::placeholder {
+  font-size: 1.2em;
+  align-items: center;
+}
+.container .login .inputBx input[type="submit"] {
+  color: white;
+  font-size: 1.3em;
+  /* background: linear-gradient(45deg, #e058b5), #ff5400; */
+  /* background-color: orange; */
+  background: linear-gradient(45deg, rgb(151, 115, 47), rgb(94, 94, 206));
+}
+.container .login .links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  align-items: center;
+}
+.container .login .links a {
+  color: white;
+  text-decoration: none;
+}
